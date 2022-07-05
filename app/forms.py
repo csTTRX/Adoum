@@ -55,7 +55,7 @@ class ExperienceForm(forms.ModelForm):
         model = Experiences
         fields ="__all__"
     
-class ContactForm(forms.Form):
+class ContactForm(forms.ModelForm):
     full_name = forms.CharField(widget=forms.TextInput(
                 attrs={'class':'text-input',
                 'placeholder':'Nom Complet'}))
@@ -67,3 +67,6 @@ class ContactForm(forms.Form):
     message = forms.CharField(widget=forms.Textarea(
                 attrs={'class':'text-area',
                 'placeholder':'Votre message'}))
+    class Meta:
+        model = Contact
+        fields = '__all__'

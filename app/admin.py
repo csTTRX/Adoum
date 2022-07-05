@@ -12,3 +12,8 @@ class ExperienceAdmin(admin.ModelAdmin):
 
     list_display = ['type', 'post', 'start_at', 'end_at', 'etablisment_name', 'description']
 admin.site.register(Experiences, ExperienceAdmin)
+
+class ContactAdmin(admin.ModelAdmin):
+
+    list_display = ['full_name', 'email', 'message']
+admin.site.register(Contact, ContactAdmin)

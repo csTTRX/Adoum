@@ -16,3 +16,8 @@ class Experiences(models.Model):
     description = models.TextField()
     start_at = models.DateField()
     end_at = models.DateField(blank=True)
+
+class Contact(models.Model):
+    full_name = models.CharField(max_length=120)
+    email = models.EmailField()
+    message = models.TextField()

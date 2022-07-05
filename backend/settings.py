@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-i-2h&nmr1qn=t6x@vy@9njby*1*old$wftahu@vj%gz9o(6kqf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['adoum.herokuapp.com', '127.0.0.1:8000', 'localhost',"127.0.0.1"]
 
@@ -127,9 +127,9 @@ STATICFILES_DIRS = [
 ]
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'assbrico@gmail.com'
-EMAIL_HOST_PASSWORD = 'Ha@66051053'
+EMAIL_HOST ='smtp.gmail.com'
+EMAIL_HOST_USER =''
+EMAIL_HOST_PASSWORD =''
 EMAIL_PORT = 587
 
 # Default primary key field type

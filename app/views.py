@@ -1,10 +1,7 @@
-import django
 from django.shortcuts import render
 from app.models import Experiences, Formations
 from .forms import ContactForm, FormationForm, ExperienceForm
-from django.contrib import messages
 from django.http.response import HttpResponse
-from django.core.mail import send_mail
 # Create your views here.
 
 def home(request):
@@ -18,16 +15,8 @@ def home(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            try:
-                send_mail(subject=f'Envoyer par {form.cleaned_data["full_name"] or "anonyme"}',
-                message = form.cleaned_data["message"],
-                from_email = form.cleaned_data["email"],
-                recipient_list=['cs.ttrx@gmail.com']
-                )
-                form = ContactForm()
-                return HttpResponse('Votre message a bien été envoyé, Merci!')
-            except:
-                return HttpResponse("Désolé votre message n'a été envoyé. Vous avez peut être un problème de connexion.")
+            form.save()
+            return HttpResponse('Votre message a bien été envoyé, Merci!')
     return render(request, 'home.html', context)
 
 def add_formation(request):
