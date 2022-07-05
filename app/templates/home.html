@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class = 'container'>
+        <section class = 'home-section', id = 'home'>
+            <div class = 'home'>
+                <nav>
+                    <div class = 'logo'>
+                        <a href="#home"> Adoum</a>
+                    </div>
+                    <ul class = ''>
+                        <li> <a href="#formation"> Formations</a></li>
+                        <li> <a href="#experience"> Experiences</a> </li>
+                        <li class = 'contact'> <a href="#contact"> Contact</a></li>
+                    </ul>
+                    <label class = 'menu' id = 'icon'><img src="{% static  'menu.png' %} " alt="menu" </label>
+                </nav>
+                <div class='hero'>
+                    <div class = 'hero-content'>
+                        <h1>Salut!</h1>
+                        <h1>Je suis <span>ADOUM</span></h1>
+                        <p>Ingénieur en microbiologie, soucieux, passionné des sciences et surtout des études des microorganismes, les interactions entre ces derniers, avec l’environnement et les organismes supérieurs.</p>
+                        <a href = "#contact" class = 'contact'>Me Contactez </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class = 'formation-section', id = 'formation'>
+            <h1 class = 'title'> Formations </h1>
+            <div class = 'car-container'>
+            {% for formation in formations %}
+            <div class = 'car'>
+                <h4 class ='date'>{{formation.start_at}} - {{formation.end_at}}</h4>
+                <h1>{{formation.name}}</h1>
+                <p >{{formation.description}}</p>
+            </div>
+            {% endfor %}
+            </div>
+        </section>
+        <section class = 'experience-section', id = 'experience' >
+            <h1 class = 'title'> Experiences profesionnel </h1>
+            <div class = 'car-container'>
+                {% for experience in experiences %}
+                <div class ='car'>
+                    <p class ='date'>{{experience.start_at}} - {{experience.end_at}}</p>
+                    <div>
+                        <p><span class = 'type'> {{experience.type}} : </span> <span>{{experience.post}}</span> chez <span> {{experience.etablisment_name}}</span></p>
+                    </div> 
+                    <p>{{experience.description}}</p>
+                </div>
+            {% endfor %}
+            </div>
+            
+        </section>
+        <section class = "contact-section" id= "contact">
+            <h1 class = 'title'> Me-contactez</h1>
+            <form class = 'contact-container' method = 'POST'>
+                {{form.full_name}}
+                {{form.email}}
+                {{form.message}}
+                <input type="submit" value = "Envoyez" class = 'button'>
+                {% csrf_token %}
+            </form>
+        </section>
+        <footer>
+            <div class ='socials'>
+                <ul>
+                    <li> <a href="https://www.linkedin.com/in/adoum-moustapha-adji-a25382197/"><i class = "fab fa-linkedin"></i></a> </li>
+                    <li> <a href="https://www.facebook.com/moustaphaadji.adoum"><i class = "fab fa-facebook"></i></a></li>
+                    <li> <a href="https://twitter.com/AdjMoustapha"><i class = "fab fa-twitter"></i> </a></a></li>
+                </ul>
+                <a href="#home" class='home-page'><i class="fa-solid fa-angle-up"></i></a>
+            </div>
+            <p>Copyright 2022 by csttrx,All rights reserved.</p>
+        </footer>
+    </div>
+{% endblock content %}

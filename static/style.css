@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+:root{
+    --bg-color :#222629 ;
+    --bg-color-variant : #474B4F;
+    --primary-color : #86C232;
+    --primary-color-variant:#61892F;
+    --second-color: #6B6E70;
+    --light:rgb(250, 250, 250);
+}
+
+*{
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*------------------- nav -----------------------------*/
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 10% ;
+}
+.logo a {
+    color: var(--primary-color);
+    font-size: 32px;
+    font-weight: bold;
+}
+.menu {
+    display: none;
+}
+.menu img {
+    max-width: 47px;
+}
+ul li {
+    display: inline;
+    margin-left:22px;
+}
+ul li a {
+    color: var(--light);
+    font-size: 22px;
+    font-weight: 600px;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+}
+.contact{
+    padding: 12px 16px;
+    background: var(--primary-color-variant);
+    border-radius: 20px;
+    cursor: pointer;
+}
+.contact:hover{
+    background: var(--primary-color);
+    padding: 13px 17px;
+}
+
+/*------------------- home-section -----------------------------*/
+.home-section{
+    height: 80vh;
+    background-image: url('hero.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.home{
+    background-color: #60892f2b;
+    position: relative;
+}
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+}
+.hero-content{
+    width: 50%;
+}
+.hero h1 {
+    margin-bottom: 20px;
+    font-size: 72px;
+    font-weight: bold;
+    color: var(--bg-color);
+}
+.hero h1 span {
+    color: var(--primary-color-variant);
+}
+.hero p {
+    line-height: 32px;
+    margin-bottom:32px;
+    color: var(--bg-color);
+}
+.hero a {
+    color: var(--light);
+}
+
+
+
+/*------------------- formation-section -----------------------------*/
+.formation-section, .experience-section{
+    padding: 5% 10%;
+}
+
+.title{
+    font-size: 55px;
+    text-align: center;
+    color: var(--light);
+    position: relative;
+}
+.title:before{
+    content: "";
+    width: 130px;
+    height: 5px;
+    background: var(--primary-color);
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    text-align: center;
+}
+.title::after{
+    content: "";
+    width: 130px;
+    height: 5px;
+    background: var(--primary-color);
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    text-align: center;
+}
+
+.car-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+.car{
+    background: var(--bg-color-variant);
+    width: 45%;
+    padding: 2%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.car:hover{
+    flex-basis: 43%;
+    margin: 1%;
+    translate: all 2sec;
+}
+.car p {
+    color: var(--light);
+    line-height: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+.car h1{
+    color: var(--second-color);
+}
+.car span {
+    color: var(--primary-color);
+}
+.date{
+    color: var(--primary-color-variant);
+}
+/*------------------- contact-section -----------------------------*/
+.contact-section{
+    padding: 2% 10%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color-variant);
+}
+
+.contact-container{
+    display: flex;
+    flex-direction: column;
+}
+.contact-container * {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.contact-container input {
+    height: 55px;
+
+}
+.button {
+    cursor: pointer;
+    background: var(--primary-color-variant);
+    color: var(--light);
+    border: none;
+    font-size: 22px;
+    font-weight: 300;
+}
+.button:hover {
+    background: var(--primary-color);
+}
+/* -------------------- footer-section ------------------*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+footer ul li{
+    display: inline;
+}
+footer i{
+    font-size: 47px;
+}
+
+footer i:hover{
+    color: var(--primary-color);
+}
+footer p{
+    color: var(--second-color);
+    text-align: center;
+}
+.socials {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.home-page i {
+    color: var(--light);
+    background-color: var(--primary-color-variant);
+    border-radius: 50%;
+    height: 47px;
+    width: 47px;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+
+
+}
+
+/*------------------ media sreen --------------------------*/
+
+@media screen and (max-width : 768px) {
+    
+    .home-section{
+        height: auto;
+        padding-bottom: 20px;
+    }
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto
+    }
+    
+    .hero h1 {
+        margin-bottom: 5px;
+        font-size: 32px;
+        font-weight: bold;
+    }
+    .hero p {
+        line-height: 32px;
+        margin-bottom:32px;
+    }
+    .hero a {
+        color: var(--light);
+    }
+
+    .title{
+        font-size: 32px;
+    }
+    .title:before{
+        display: none;
+    }
+    .title::after{
+        display: none;
+    }
+}
+
+@media screen and (max-width : 1400px) {
+    .formation-section, .experience-section{
+        padding: 5% 2%;
+    }
+    nav ul {  
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 77px);
+    }
+    nav ul li{
+        margin-bottom: 20px;
+        display: block;
+    }
+    
+    .menu {
+        display: block;
+    }
+
+    nav ul.show{
+        padding-top: 20px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        z-index : 1;
+        background: var(--second-color);
+    }
+}
+
+@media screen and (max-width : 1100px) {
+    .car {
+        width: 100%;
+    }
+    .hero-content{
+        width: 90%;
+    }
+}

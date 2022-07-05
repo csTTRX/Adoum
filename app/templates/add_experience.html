@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="" method = 'POST'>
+        {{form.type}}
+        {{form.post}}
+        {{form.etablisment_name}}
+        {{form.start_at}}
+        {{form.end_at}}
+        {{form.description}}
+        <input type="submit" value = 'ajoutez experience'>
+        {% csrf_token %}
+    </form>
+    
+{% endblock content %}
