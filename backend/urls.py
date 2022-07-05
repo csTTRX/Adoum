@@ -18,7 +18,7 @@ from django.urls import path
 from app.views import *
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('atuim270/', admin.site.urls),
     path('', home, name = 'home'),
     path('add-formation/', add_formation, name = 'add_formation'),
     path('add-experience/', add_experience, name = 'add_experience'),

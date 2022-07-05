@@ -86,6 +86,7 @@ ul li a {
     font-size: 72px;
     font-weight: bold;
     color: var(--bg-color);
+    background-color: rgba(255, 255, 255, 0.30);
 }
 .hero h1 span {
     color: var(--primary-color-variant);
@@ -94,12 +95,11 @@ ul li a {
     line-height: 32px;
     margin-bottom:32px;
     color: var(--bg-color);
+    background:rgba(255, 255, 255, 0.30);
 }
 .hero a {
     color: var(--light);
 }
-
-
 
 /*------------------- formation-section -----------------------------*/
 .formation-section, .experience-section{
